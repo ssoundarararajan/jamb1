@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>LaunchEnglish - JAMB Use of English Practice Test 1</title>
+    <title>LaunchEnglish - JAMB 1</title>
     <link type="text/css" rel="stylesheet" href="css/main.css" />
     <link
       rel="stylesheet"
@@ -31,76 +31,93 @@
     </style>
   </head>
   <!-- Navbar SECTION -->
-  <div class="topnav" id="myTopnav">
-    <a href="#home"
-      ><i class="fa fa-home site-nav--icon"></i>Launch English Home</a
-    >
-    <a href="articlesmain.html"
-      ><i class="fa fa-info site-nav--icon"></i>Articles</a
-    >
-    <!--<a href="#podcasts"><i class="fa fa-briefcase site-nav--icon"></i>Podcasts</a>-->
-    <a href="#tutorials"
-      ><i class="fa fa-briefcase site-nav--icon"></i>Tutorials</a
-    >
-    <a href="#contact"><i class="fa fa-envelope site-nav--icon"></i>Contact</a>
-    <!--hamburger menu when screen shrinks-->
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()"
-      >&#9776;</a
-    >
-  </div>
-  <body>
-    <div id="container">
-      <div class="title">
-        <h1>JAMB 1 English Practice Test</h1>
-        <h3>60 Questions</h3>
-        <div
-          id="timer"
-          style="font-size: 20px; font-weight: bold; color: red"
-        ></div>
-        <div
-          id="progress-container"
-          style="width: 100%; background-color: #f3f3f3; border-radius: 5px"
-        >
-          <div
-            id="progress-bar"
-            style="
-              height: 30px;
-              background-color: green;
-              border-radius: 5px;
-              transition: width 0.5s ease-in-out;
-            "
-          ></div>
-          <span id="progress-text">0.0%</span>
-          <!-- This will display the percentage -->
-        </div>
-        <p id="qType"></p>
-      </div>
-      <br />
-      <div id="containerInner">
-        <h3 style="text-align: center"></h3>
-        <div id="image">
-          <img src="#" width="100%" alt="question-image" />
-        </div>
-        <div id="audio">
-          <h5>Audio</h5>
-          <audio
-            controls
-            src="/audio/Button Down Sound.mp3"
-            style="width: 100%"
-          >
-            Your browser does not support the audio element.
-          </audio>
-          <!-- <audio src="/audio/Button-Down-Sound.ogg" controls>
-						Your browser does not support the audio element. </audio> -->
-        </div>
-        <p id="content"></p>
-        <h6><i></i></h6>
-      </div>
-      <div id="quiz"></div>
-      <div class="button" id="next" data-focusable tabindex="0"><a href="#">Next</a></div>
-      <div class="button" id="prev" data-focusable tabindex="0"><a href="#">Prev</a></div>
-      <div class="button" id="start" data-focusable tabindex="0"><a href="#">Start Over</a></div>
+  <div id="nav-header" style="display: block;" aria-label="Nav Header">
+    <div class="topnav" id="myTopnav">
+      <a href="#home"
+        ><i class="fa fa-home site-nav--icon"></i>Launch English Home</a
+      >
+      <a href="articlesmain.html"
+        ><i class="fa fa-info site-nav--icon"></i>Articles</a
+      >
+      <!--<a href="#podcasts"><i class="fa fa-briefcase site-nav--icon"></i>Podcasts</a>-->
+      <a href="#tutorials"
+        ><i class="fa fa-briefcase site-nav--icon"></i>Tutorials</a
+      >
+      <a href="#contact"><i class="fa fa-envelope site-nav--icon"></i>Contact</a>
+      <!--hamburger menu when screen shrinks-->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()"
+        >&#9776;</a
+      >
     </div>
+  </div>
+
+  <div id="quiz-header" style="display: none;" aria-label="Exam Header">
+    <h1 style="margin: 0;">JAMB 1</h1>
+    <div id="timer" style="font-size: 20px; font-weight: bold; color: red;"></div>
+  </div>
+
+  <body>
+     <!-- Info Page -->
+    <div id="infoPage">
+      <h1>JAMB 1 English Practice Exam</h1>
+      <div>
+        <h3>Exam Info</h3>
+        <p><strong>Time Allowed:</strong> 1:00:00</p>
+        <p><strong>Total Questions:</strong> 60</p>
+        <h4>Instructions:</h4>
+        <ul>
+          <li>You must answer all questions.</li>
+          <li>You can modify any answer before submitting.</li>
+          <li>You'll be able to check answers before final submission.</li>
+        </ul>
+        <button id="startQuizButton">Start Exam</button>
+      </div>
+    </div>
+
+    <!-- Quiz Content -->
+    <div id="quiz-layout" style="display: flex;">
+      <nav id="quiz-overview" aria-label="Exam Overview" style="display:none;">
+        <h3>Exam Overview</h3>
+        <div id="question-buttons">
+          <!-- JavaScript will generate buttons here -->
+        </div>
+      </nav>  
+
+      <div id="container" style="display:none;">    
+        <div class="title">
+          <!-- Removed JAMB 1 and timer from here -->
+          <h3>60 Questions</h3>
+          <div id="progress-container">
+            <span id="progress-text"> </span>
+          </div>
+          <p id="qType"></p>
+        </div>
+        <br />
+        <div id="containerInner">
+          <h3 style="text-align: center"></h3>
+          <div id="image">
+            <img src="#" width="100%" alt="question-image" />
+          </div>
+          <div id="audio">
+            <h5>Audio</h5>
+            <audio
+              controls
+              src="/audio/Button Down Sound.mp3"
+              style="width: 100%"
+            >
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <p id="content"></p>
+          <h6><i></i></h6>
+        </div>
+        <div id="quiz"></div>
+        <div class="button" id="next" data-focusable tabindex="0"><a href="#">Next</a></div>
+        <div class="button" id="prev" data-focusable tabindex="0"><a href="#">Prev</a></div>
+        <div class="button" id="start" data-focusable tabindex="0"><a href="#">Start Over</a></div>
+      </div>
+    </div>
+
 
     <!--this is for the NaN quiz alert-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
